@@ -27,7 +27,7 @@ class LocationSeeder extends Seeder
         foreach ($locations as $location) {
             Location::updateOrCreate(
                 ['name' => $location], // Kolom yang menjadi acuan pencarian
-                // ['name' => $location]  // Data yang ingin diupdate atau dibuat
+                ['name' => $location]  // Data yang ingin diupdate atau dibuat
             );
         }
     }

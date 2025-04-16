@@ -27,13 +27,13 @@
                                         </li>
                                         <li class="dropdown"><a href="">Lokasi</a>
                                             <ul>
-                                                <li><a href="">Kota Mataram</a></li>
-                                                <li><a href="">Kota Sorong</a></li>
-                                                <li><a href="">Kabupaten Lombok Timur</a></li>
+                                                {{-- <li><a href="">Kota Mataram</a></li> --}}
+                                                <x-header />
                                             </ul>
                                         </li>
 
                                         <li><a href="">Featured Jobs</a></li>
+                                        @auth
                                         @if (Auth::User()->user_type == 'company')
                                             <li class="dropdown"><a href="">Upload Loker</a>
                                                 <div class="megamenu">
@@ -64,6 +64,7 @@
                                                 </div>
                                             </li>
                                         @endif
+                                        @endauth
 
                                         <li class="dropdown"><a href="">Aboute</a>
                                             <div class="megamenu">
