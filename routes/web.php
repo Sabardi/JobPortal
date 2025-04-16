@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\JobVacancyController;
 use Illuminate\Support\Facades\Auth;
@@ -33,3 +34,8 @@ Route::post('applications/{jobVacancyId}', [ApplicationController::class, 'store
 // Admin Routes
 Route::post('job/{id}/verify', [AdminController::class, 'verifyJob'])->middleware('role:admin');
 Route::post('job/{id}/deactivate', [AdminController::class, 'deactivateJob'])->middleware('role:admin');
+
+Route::get('/daftar/prusahaan', function () {
+    return view('auth.register-company');
+})->name('register.company');
+Route::post('/register/company', [RegisterController::class, 'registerCompany'])->name('register.company.post');
