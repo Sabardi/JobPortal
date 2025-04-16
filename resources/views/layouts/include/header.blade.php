@@ -34,36 +34,36 @@
 
                                         <li><a href="">Featured Jobs</a></li>
                                         @auth
-                                        @if (Auth::User()->user_type == 'company')
-                                            <li class="dropdown"><a href="">Upload Loker</a>
-                                                <div class="megamenu">
-                                                    <div class="row clearfix">
-                                                        <div class="col-xl-6 column">
-                                                            <ul>
-                                                                <li>
-                                                                    <h4>Post a Job</h4>
-                                                                </li>
-                                                                <li><a href="">Buat Loker</a></li>
-                                                                <li><a href="">Daftar lowongan</a></li>
-                                                                <li><a href="feature-element-1.html">Data Pendaftar</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-xl-6 column">
-                                                            <ul>
-                                                                <li>
-                                                                    <h4>Manage company</h4>
-                                                                </li>
-                                                                <li><a href="testimonial-element.html">Profile
-                                                                        company</a>
-                                                                </li>
-                                                                <li><a href="">Account Settings</a></li>
-                                                            </ul>
+                                            @if (Auth::User()->user_type == 'company')
+                                                <li class="dropdown"><a href="">Upload Loker</a>
+                                                    <div class="megamenu">
+                                                        <div class="row clearfix">
+                                                            <div class="col-xl-6 column">
+                                                                <ul>
+                                                                    <li>
+                                                                        <h4>Post a Job</h4>
+                                                                    </li>
+                                                                    <li><a href="{{ route('job.create') }}">Buat Loker</a></li>
+                                                                    <li><a href="">Daftar lowongan</a></li>
+                                                                    <li><a href="feature-element-1.html">Data Pendaftar</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-xl-6 column">
+                                                                <ul>
+                                                                    <li>
+                                                                        <h4>Manage company</h4>
+                                                                    </li>
+                                                                    <li><a href="testimonial-element.html">Profile
+                                                                            company</a>
+                                                                    </li>
+                                                                    <li><a href="">Account Settings</a></li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </li>
-                                        @endif
+                                                </li>
+                                            @endif
                                         @endauth
 
                                         <li class="dropdown"><a href="">Aboute</a>

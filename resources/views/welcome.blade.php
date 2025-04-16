@@ -57,7 +57,6 @@
                                 <select class="wide">
                                     <option data-display="Select Category">Kategori</option>
                                     @foreach ($categories as $category)
-                                        )
                                         <option value="1">{{ $category->name }}</option>
                                     @endforeach
                                 </select>

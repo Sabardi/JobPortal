@@ -21,7 +21,13 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// company
+Route::get('/create/company', [CompanyController::class, 'create'])->name('company.create');
 
+// job vacancy
+Route::get('/create/job', [JobVacancyController::class, 'create'])->name('job.create');
+
+Route::post('/create/perusahaan', [CompanyController::class, 'store'])->name('company.store');
 // Company Routes
 Route::resource('companies', CompanyController::class)->middleware('auth');
 
