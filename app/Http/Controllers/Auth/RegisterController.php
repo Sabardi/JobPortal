@@ -76,9 +76,17 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        // return $request->all();
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
+        
+        if ($request->has('has_company')) {
+            // Jika dicentang, set user_type menjadi 'company'
+            $user->user_type = 'company';
+            $user->save();
+        }
+
 
         if ($response = $this->registered($request, $user)) {
             return $response;
