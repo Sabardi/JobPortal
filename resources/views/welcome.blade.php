@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-  <!-- banner-section -->
-  <section class="banner-section style-two centred"
-  style="background-image: url({{ asset('assets') }}/images/banner/banner-2.jpg);">
-  <div class="auto-container">
+    <!-- banner-section -->
+    <section class="banner-section style-two centred"
+        style="background-image: url({{ asset('assets') }}/images/banner/banner-2.jpg);">
+        <div class="auto-container">
             <div class="content-box">
                 <div class="text">
                     <h1>Buy, Sell, Rent & Exchange <br />in one Click</h1>
@@ -47,20 +47,19 @@
                                 <i class="icon-3"></i>
                                 <select class="wide">
                                     <option data-display="Select Location">Lokasi</option>
-                                    <option value="1">California</option>
-                                    <option value="2">New York</option>
-                                    <option value="3">Sun Francis</option>
-                                    <option value="4">Shicago</option>
+                                    @foreach ($locations as $location)
+                                        <option value="1">{{ $location->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <i class="icon-4"></i>
                                 <select class="wide">
                                     <option data-display="Select Category">Kategori</option>
-                                    <option value="1">Education</option>
-                                    <option value="2">Restaurant</option>
-                                    <option value="3">Real Estate</option>
-                                    <option value="4">Home Appliances</option>
+                                    @foreach ($categories as $category)
+                                        )
+                                        <option value="1">{{ $category->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="btn-box">
@@ -87,7 +86,7 @@
             </div>
 
             <x-modal-component />
-            
+
             <div class="five-item-carousel owl-carousel owl-theme dots-style-one owl-nav-none">
                 <div class="category-block-one">
                     <div class="inner-box">
@@ -506,7 +505,7 @@
                                                 <p>Electronics</p>
                                             </div>
                                             <h4><a href="browse-ads-details.html">Villa on Grand Avenue</a></h4>
-                                       
+
                                             <ul class="info clearfix">
                                                 <li><i class="far fa-clock"></i>1 months ago</li>
                                                 <li><i class="fas fa-map-marker-alt"></i>G87P, Birmingham, UK</li>
@@ -532,7 +531,7 @@
                                                 <p>Electronics</p>
                                             </div>
                                             <h4><a href="browse-ads-details.html">Villa on Grand Avenue</a></h4>
-                                       
+
                                             <ul class="info clearfix">
                                                 <li><i class="far fa-clock"></i>1 months ago</li>
                                                 <li><i class="fas fa-map-marker-alt"></i>G87P, Birmingham, UK</li>
@@ -558,7 +557,7 @@
                                                 <p>Electronics</p>
                                             </div>
                                             <h4><a href="browse-ads-details.html">Villa on Grand Avenue</a></h4>
-                                       
+
                                             <ul class="info clearfix">
                                                 <li><i class="far fa-clock"></i>1 months ago</li>
                                                 <li><i class="fas fa-map-marker-alt"></i>G87P, Birmingham, UK</li>
