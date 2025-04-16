@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -18,8 +19,15 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('12345678'),
+            'user_type' => 'admin'
+        ]);
+
+        $this->call([
+            CategorySeeder::class,
+            LocationSeeder::class,
         ]);
 
         // Membuat Permission
@@ -38,5 +46,6 @@ class DatabaseSeeder extends Seeder
         $admin->givePermissionTo(['create_job', 'edit_job', 'verify_job', 'delete_job']);
         $company->givePermissionTo(['create_job', 'edit_job']);
         $jobSeeker->givePermissionTo(['apply_for_job']);
+
     }
 }
