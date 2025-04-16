@@ -30,7 +30,7 @@
                         <li><a href="login.html"><i class="fab fa-google-plus-g"></i>Login with Google Plus</a></li>
                     </ul>
                     <div class="othre-text">
-                        <p>Don’t have an account? <a href="signup.html">Register Now</a></p>
+                        <p>Don’t have an account? <a href="{{ route('register') }}">Register Now</a></p>
                     </div>
                 </div>
             </div>
