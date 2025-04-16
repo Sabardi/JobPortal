@@ -72,16 +72,15 @@
                         @guest
                             @if (Route::has('login'))
                                 <div class="btn-box">
-                                    {{-- <a href="{{ route('login') }}" class="theme-btn-one">Masuk</a> --}}
-                                    {{-- <x-modal-component /> --}}
-                                    <button type="button" class="theme-btn-one" data-bs-toggle="modal"
+                                    <a href="{{ route('login') }}" class="theme-btn-one">Masuk</a>
+                                    {{-- <button type="button" class="theme-btn-one" data-bs-toggle="modal"
                                         data-bs-target="#loginModal">
                                         Masuk
                                     </button>
                                     <button type="button" class="theme-btn-one" data-bs-toggle="modal"
                                         data-bs-target="#registerModal">
                                         Daftar
-                                    </button>
+                                    </button> --}}
                                 </div>
                             @endif
                         @endguest
@@ -105,7 +104,9 @@
                         @guest
                             @if (Route::has('login'))
                                 <div class="btn-box">
-                                    <button type="button" class="theme-btn-one" data-bs-toggle="modal"
+                                    <a href="{{ route('login') }}" class="theme-btn-one">Masuk</a>
+
+                                    {{-- <button type="button" class="theme-btn-one" data-bs-toggle="modal"
                                         data-bs-target="#loginModal">
                                         Masuk
                                     </button>
@@ -113,7 +114,7 @@
                                     <button type="button" class="theme-btn-one" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">
                                         Daftar
-                                    </button>
+                                    </button> --}}
                                 </div>
                             @endif
                         @endguest
