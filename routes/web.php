@@ -35,7 +35,5 @@ Route::post('applications/{jobVacancyId}', [ApplicationController::class, 'store
 Route::post('job/{id}/verify', [AdminController::class, 'verifyJob'])->middleware('role:admin');
 Route::post('job/{id}/deactivate', [AdminController::class, 'deactivateJob'])->middleware('role:admin');
 
-Route::get('/daftar/prusahaan', function () {
-    return view('auth.register-company');
-})->name('register.company');
+Route::get('/register/company', [RegisterController::class, 'createCompany'])->name('register.company');
 Route::post('/register/company', [RegisterController::class, 'registerCompany'])->name('register.company.post');

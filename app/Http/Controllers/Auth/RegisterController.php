@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
@@ -86,5 +87,10 @@ class RegisterController extends Controller
         return $request->wantsJson()
             ? new JsonResponse([], 201)
             : redirect($this->redirectPath());
+    }
+
+    public function createCompany(): View
+    {
+        return view('auth.register-company');
     }
 }

@@ -23,9 +23,7 @@
         <!-- preloader -->
         <div class="preloader"></div>
         <!-- preloader -->
-
         @include('layouts.include.header')
-        <x-modal-component />
         @include('layouts.include.mobileMenu')
         <x-modal-component />
         <x-modal-component-register />
