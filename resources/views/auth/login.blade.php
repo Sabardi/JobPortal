@@ -6,7 +6,8 @@
         <div class="inner-container">
             <div class="inner-box">
                 <h2>Log in</h2>
-                <form action="login.html" method="post" class="login-form">
+                <form action="{{ route('login') }}" method="post" class="login-form">
+                    @csrf
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" name="email" required="">
