@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Job_vacancy;
+use App\Models\Job_vacancy_category;
 use App\Models\JobCategory;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class JobVacancyController extends Controller
 {
@@ -75,18 +77,35 @@ class JobVacancyController extends Controller
         $validator = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'job_type' => 'required|in:full_time,part_time,freelance',
+            'job_type' => 'required|in:full_time,part_time,internship,remote',
             'location_id' => 'required|exists:locations,id',
+            'categories' => 'required|array', // Untuk kategori yang terkait
+            'categories.*' => 'exists:job_categories,id', // Validasi ID kategori yang valid
         ]);
 
         $validator['salary_range'] = $salary_range;
         $validator['company_id'] = auth()->user()->company->id;
+        // Mulai transaksi database
+        DB::beginTransaction();
 
-        Job_vacancy::create($validator);
+        try {
+            $jobVacancy = Job_vacancy::create($validator);
 
-        return "ok";
+            // Menyimpan kategori terkait
+            foreach ($validator['categories'] as $categoryId) {
+                Job_vacancy_category::create([
+                    'job_vacancy_id' => $jobVacancy->id,
+                    'job_category_id' => $categoryId,
+                ]);
+            }
 
-        return response()->json($jobVacancy, 201);
+            DB::commit();
+
+            return 'ok';
+        } catch (\Exception $e) {
+            DB::rollBack();
+            throw $e;
+        }
     }
 
     // Mengupdate lowongan pekerjaan

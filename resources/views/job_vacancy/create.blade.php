@@ -92,8 +92,8 @@
 
                         <div class="form-group">
                             <label>Nama lowongan</label>
-                            <input type="text" name="title" value="{{ old('title') }}"
-                                value="{{ old('title') }}" required="">
+                            <input type="text" name="title" value="{{ old('title') }}" value="{{ old('title') }}"
+                                required="">
                         </div>
 
                         <div class="form-group">
@@ -116,7 +116,10 @@
                                     <input type="radio" name="job_type" value="part_time" id="part_time"> Part Time
                                 </div>
                                 <div>
-                                    <input type="radio" name="job_type" value="freelance" id="freelance"> Freelance
+                                    <input type="radio" name="job_type" value="internship" id="freelance"> Internship
+                                </div>
+                                <div>
+                                    <input type="radio" name="job_type" value="remote" id="remote"> remote
                                 </div>
                             </div>
                         </div>
@@ -132,11 +135,38 @@
                             <input id="max" type="number" name="salary_max" value="{{ old('salary_max') }}"
                                 placeholder="cth: 5000000">
                         </div>
+
+                        {{-- <div class="form-group">
+                            <label for="categories">Categories</label>
+                            <select name="categories[]" id="categories" class="form-control" multiple required>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div> --}}
+
+                        <div class="form-group">
+                            <label for="categories">Categories</label>
+                            <div class="category-checkboxes">
+                                @foreach ($categories as $category)
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="categories[]"
+                                            value="{{ $category->id }}" id="category-{{ $category->id }}">
+                                        <label class="form-check-label" for="category{{ $category->id }}">
+                                            {{ $category->name }}
+                                        </label>
+                                    </div>
+                                @endforeach
+                            </div>
+                            @error('categories')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <label>Deskripsi lowongan</label>
                             <textarea class="form-control" name="description" id="" cols="30" rows="10"
                                 value="{{ old('description') }}"></textarea>
-
                         </div>
                         <div class="form-group message-btn">
                             <button type="submit" class="theme-btn-one">Daftar</button>
