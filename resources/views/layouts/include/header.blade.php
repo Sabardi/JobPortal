@@ -5,7 +5,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href=""><img src="{{ asset('assets') }}/images/logo-2.png"
+                            <figure class="logo"><a href="{{ route('home') }}"><img src="{{ asset('assets') }}/images/logo-2.png"
                                         alt=""></a></figure>
                         </div>
                         <div class="menu-area">
@@ -20,9 +20,9 @@
                                     <ul class="navigation clearfix">
                                         <li class="current dropdown"><a href="#">Loker</a>
                                             <ul>
-                                                <li><a href="">Semua Loker</a></li>
-                                                <li><a href="">Daftar Perusahaan</a></li>
-                                                <li><a href="">Kategori Loker</a></li>
+                                                <li><a href="{{ route('loker') }}">Semua Loker</a></li>
+                                                <li><a href="{{ route('company') }}">Daftar Perusahaan</a></li>
+                                                <li><a href="{{ route('category') }}">Kategori Loker</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown"><a href="">Lokasi</a>
@@ -44,7 +44,7 @@
                                                                         <h4>Post a Job</h4>
                                                                     </li>
                                                                     <li><a href="{{ route('job.create') }}">Buat Loker</a></li>
-                                                                    <li><a href="">Daftar lowongan</a></li>
+                                                                    <li><a href="{{ route('job.index') }}">Daftar lowongan</a></li>
                                                                     <li><a href="feature-element-1.html">Data Pendaftar</a>
                                                                     </li>
                                                                 </ul>
@@ -126,7 +126,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href=""><img src="{{ asset('assets') }}/images/logo.png"
+                            <figure class="logo"><a href="{{ route('home') }}"><img src="{{ asset('assets') }}/images/logo.png"
                                         alt=""></a></figure>
                         </div>
                         <div class="menu-area">

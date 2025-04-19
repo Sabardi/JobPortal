@@ -1,3 +1,3 @@
 @foreach ($locations as $location)
-    <li><a href="#">{{ $location->name }}</a></li>
+    <li><a href="{{ route('get.job.location', [$location, $location->name]) }}">{{ $location->name }}</a></li>
 @endforeach

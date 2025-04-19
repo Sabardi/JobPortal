@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('company_id')->constrained('companies')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
-            $table->string('location');
             $table->string('salary_range')->default('negotiable');
             $table->enum('job_type', ['full_time', 'part_time', 'internship', 'remote']);
             $table->boolean('is_verified')->default(false);

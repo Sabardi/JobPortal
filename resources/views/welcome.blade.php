@@ -488,171 +488,78 @@
                 <div class="tabs-content">
                     <div class="tab active-tab" id="tab-1">
                         <div class="row clearfix">
-                            <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                                <div class="feature-block-one wow fadeInDown animated animated" data-wow-delay="00ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img
-                                                    src="{{ asset('assets') }}/images/resource/feature-7.jpg"
-                                                    alt=""></figure>
-                                            <div class="shape"></div>
-                                            <div class="feature">Featured</div>
-                                        </div>
-                                        <div class="lower-content">
-                                            <div class="category"><i class="fas fa-tags"></i>
-                                                <p>Electronics</p>
+                            @foreach ($jobs as $job)
+                                <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
+                                    <div class="feature-block-one wow fadeInDown animated animated" data-wow-delay="00ms"
+                                        data-wow-duration="1500ms">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img
+                                                        src="{{ asset('assets') }}/images/resource/feature-7.jpg"
+                                                        alt=""></figure>
+                                                <div class="shape"></div>
+                                                <div class="feature">Featured</div>
                                             </div>
-                                            <h4><a href="browse-ads-details.html">Villa on Grand Avenue</a></h4>
+                                            <div class="lower-content">
+                                                <div class="category"><i class="fas fa-tags"></i>
+                                                    <p>{{ $job->job_type }}</p>
+                                                </div>
+                                                <h4><a href="browse-ads-details.html">{{ $job->title }}</a></h4>
 
-                                            <ul class="info clearfix">
-                                                <li><i class="far fa-clock"></i>1 months ago</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>G87P, Birmingham, UK</li>
-                                            </ul>
+                                                <ul class="info clearfix">
+                                                    <li><i
+                                                            class="far fa-clock"></i>{{ $job->created_at->diffForHumans() }}
+                                                    </li>
+                                                    <li><i class="fas fa-map-marker-alt"></i>{{ $job->location->name }}
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                                <div class="feature-block-one wow fadeInDown animated animated" data-wow-delay="00ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img
-                                                    src="{{ asset('assets') }}/images/resource/feature-7.jpg"
-                                                    alt=""></figure>
-                                            <div class="shape"></div>
-                                            <div class="feature">Featured</div>
-                                        </div>
-                                        <div class="lower-content">
-                                            <div class="category"><i class="fas fa-tags"></i>
-                                                <p>Electronics</p>
-                                            </div>
-                                            <h4><a href="browse-ads-details.html">Villa on Grand Avenue</a></h4>
-
-                                            <ul class="info clearfix">
-                                                <li><i class="far fa-clock"></i>1 months ago</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>G87P, Birmingham, UK</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                                <div class="feature-block-one wow fadeInDown animated animated" data-wow-delay="00ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img
-                                                    src="{{ asset('assets') }}/images/resource/feature-7.jpg"
-                                                    alt=""></figure>
-                                            <div class="shape"></div>
-                                            <div class="feature">Featured</div>
-                                        </div>
-                                        <div class="lower-content">
-                                            <div class="category"><i class="fas fa-tags"></i>
-                                                <p>Electronics</p>
-                                            </div>
-                                            <h4><a href="browse-ads-details.html">Villa on Grand Avenue</a></h4>
-
-                                            <ul class="info clearfix">
-                                                <li><i class="far fa-clock"></i>1 months ago</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>G87P, Birmingham, UK</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach()
                         </div>
                     </div>
                     <div class="tab" id="tab-2">
                         <div class="row clearfix">
-                            <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                                <div class="feature-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img
-                                                    src="{{ asset('assets') }}/images/resource/feature-7.jpg"
-                                                    alt=""></figure>
-                                            <div class="shape"></div>
-                                            <div class="feature">Featured</div>
-                                            <div class="icon">
-                                                <div class="icon-shape"></div>
-                                                <i class="icon-16"></i>
+                            @foreach ($companies as $company)
+                                <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
+                                    <div class="feature-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img
+                                                        src="{{ asset('assets') }}/images/resource/feature-7.jpg"
+                                                        alt=""></figure>
+                                                <div class="shape"></div>
+                                                <div class="feature">Featured</div>
+                                                <div class="icon">
+                                                    <div class="icon-shape"></div>
+                                                    <i class="icon-16"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="lower-content">
-                                            <div class="category"><i class="fas fa-tags"></i>
-                                                <p>Electronics</p>
-                                            </div>
-                                            <h4><a href="browse-ads-details.html">Villa on Grand Avenue</a></h4>
-                                            <ul class="rating clearfix">
-                                                <li><i class="icon-17"></i></li>
-                                                <li><i class="icon-17"></i></li>
-                                                <li><i class="icon-17"></i></li>
-                                                <li><i class="icon-17"></i></li>
-                                                <li><i class="icon-17"></i></li>
-                                                <li><a href="">(32)</a></li>
-                                            </ul>
-                                            <ul class="info clearfix">
-                                                <li><i class="far fa-clock"></i>1 months ago</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>G87P, Birmingham, UK</li>
-                                            </ul>
-                                            <div class="lower-box">
-                                                <h5>$3,000.00</h5>
-                                                <ul class="react-box">
-                                                    <li><a href=""><i class="icon-21"></i></a></li>
-                                                    <li><a href=""><i class="icon-22"></i></a></li>
+                                            <div class="lower-content">
+                                                <div class="category"><i class="fas fa-tags"></i>
+                                                    <p>{{ $company->industry_type }}</p>
+                                                </div>
+                                                <h4><a href="" class="text-sm">{{ $company->company_name }} </a>
+                                                </h4>
+                                                <ul class="info clearfix">
+                                                    <li><i class="far fa-clock"></i>Bergabung
+                                                        {{ $company->created_at->diffForHumans() }} </li>
+                                                    <li><i class="fas fa-map-marker-alt"></i>{{$company->address}}</li>
                                                 </ul>
+                                                {{-- <div class="lower-box">
+                                                    <h5>$3,000.00</h5>
+                                                    <ul class="react-box">
+                                                        <li><a href=""><i class="icon-21"></i></a></li>
+                                                        <li><a href=""><i class="icon-22"></i></a></li>
+                                                    </ul>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                                <div class="feature-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img
-                                                    src="{{ asset('assets') }}/images/resource/feature-8.jpg"
-                                                    alt=""></figure>
-                                            <div class="shape"></div>
-                                            <div class="feature">Featured</div>
-                                            <div class="icon">
-                                                <div class="icon-shape"></div>
-                                                <i class="icon-16"></i>
-                                            </div>
-                                        </div>
-                                        <div class="lower-content">
-                                            <div class="category"><i class="fas fa-tags"></i>
-                                                <p>Electronics</p>
-                                            </div>
-                                            <h4><a href="browse-ads-details.html">Villa on Grand Avenue</a></h4>
-                                            <ul class="rating clearfix">
-                                                <li><i class="icon-17"></i></li>
-                                                <li><i class="icon-17"></i></li>
-                                                <li><i class="icon-17"></i></li>
-                                                <li><i class="icon-17"></i></li>
-                                                <li><i class="icon-17"></i></li>
-                                                <li><a href="">(25)</a></li>
-                                            </ul>
-                                            <ul class="info clearfix">
-                                                <li><i class="far fa-clock"></i>2 months ago</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>G87P, Birmingham, UK</li>
-                                            </ul>
-                                            <div class="lower-box">
-                                                <h5>$2,000.00</h5>
-                                                <ul class="react-box">
-                                                    <li><a href=""><i class="icon-21"></i></a></li>
-                                                    <li><a href=""><i class="icon-22"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

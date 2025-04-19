@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Job_vacancy extends Model
 {
     protected $fillable = [
-        'company_id', 'job_title', 'job_description', 'location', 'salary_range', 'job_type', 'is_verified', 'is_active',
+        'company_id',
+        'title',
+        'description',
+        'location_id',
+        'salary_range',
+        'job_type',
+        'is_verified',
+        'is_active',
     ];
 
     // Relasi ke tabel company (perusahaan yang memposting lowongan pekerjaan)
@@ -26,5 +33,10 @@ class Job_vacancy extends Model
     public function categories()
     {
         return $this->belongsToMany(JobCategory::class, 'job_vacancy_category');
+    }
+    // Relasi ke lokasi pekerjaan
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
     }
 }

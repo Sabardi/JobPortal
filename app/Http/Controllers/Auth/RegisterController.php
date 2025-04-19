@@ -80,10 +80,15 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
-        
+
         if ($request->has('has_company')) {
             // Jika dicentang, set user_type menjadi 'company'
             $user->user_type = 'company';
+            $user->assignRole('company');
+            $user->save();
+        } else {
+            // Jika tidak dicentang, set user_type menjadi 'job_seeker'
+            $user->assignRole('job_seeker');
             $user->save();
         }
 

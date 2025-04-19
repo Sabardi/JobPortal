@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobVacancyController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,15 +20,30 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/job/location/{location}/{name}', [HomeController::class, 'getLocation'])->name('get.job.location');
+Route::get('/category', [HomeController::class, 'category'])->name('category');
+Route::get('/company', [HomeController::class, 'company'])->name('company');
+Route::get('/lowongan kerja', [HomeController::class, 'loker'])->name('loker');
 
-// company
-Route::get('/create/company', [CompanyController::class, 'create'])->name('company.create');
+// Route::get('/search/location/{{location}}', [HomeController::class, 'search'])->name('search.location');
+// Route::get('/search/category/{{category}}', [HomeController::class, 'search'])->name('search.category');
+// Route::get('/search/job/{{job}}', [HomeController::class, 'search'])->name('search.job');
+// Route::get('/search', [HomeController::class, 'search'])->name('search');
+// Route::get('/job/{id}', [JobVacancyController::class, 'show'])->name('job.show');
 
-// job vacancy
-Route::get('/create/job', [JobVacancyController::class, 'create'])->name('job.create');
+Route::group(['middleware' => 'auth'], function () {
+    // company
+    Route::post('/create/perusahaan', [CompanyController::class, 'store'])->name('company.store');
 
-Route::post('/create/perusahaan', [CompanyController::class, 'store'])->name('company.store');
+    // job vacancy
+    Route::get('/job.html', [JobVacancyController::class, 'index'])->name('job.index')->middleware('role:company');
+    Route::get('/create/job.html', [JobVacancyController::class, 'create'])->name('job.create')->middleware('role:company');
+    Route::post('/create/job.html', [JobVacancyController::class, 'store'])->name('job.create.store')->middleware('role:company');
+});
+
+
+
 // Company Routes
 Route::resource('companies', CompanyController::class)->middleware('auth');
 

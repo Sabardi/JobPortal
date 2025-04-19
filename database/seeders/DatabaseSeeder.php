@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        $User = User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('12345678'),
@@ -46,6 +46,8 @@ class DatabaseSeeder extends Seeder
         $admin->givePermissionTo(['create_job', 'edit_job', 'verify_job', 'delete_job']);
         $company->givePermissionTo(['create_job', 'edit_job']);
         $jobSeeker->givePermissionTo(['apply_for_job']);
+
+        $User->assignRole('admin');
 
     }
 }
