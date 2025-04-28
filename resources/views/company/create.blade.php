@@ -26,12 +26,17 @@
                         <input type="text" name="company_name" value="{{ old('company_name') }}" required="">
                     </div>
                     <div class="form-group">
+                        <label>Deskripsi</label>
+                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label>Nomor Telepon</label>
                         <input type="text" name="phone_number" value="{{ old('phone_number') }}">
                     </div>
                     <div class="form-group">
                         <label>Website/Link</label>
-                        <input type="text" name="company_website" placeholder="https://" value="{{ old('company_website') }}">
+                        <input type="text" name="company_website" placeholder="https://"
+                            value="{{ old('company_website') }}">
                     </div>
                     <div class="form-group">
                         <label>Industri</label>

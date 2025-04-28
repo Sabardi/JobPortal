@@ -9,15 +9,6 @@ use App\Http\Controllers\JobVacancyController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-// Route::get('/tes', function () {
-//     return view('welcome');
-// });
-
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -35,11 +26,16 @@ Route::get('/lowongan kerja', [HomeController::class, 'loker'])->name('loker');
 Route::group(['middleware' => 'auth'], function () {
     // company
     Route::post('/create/perusahaan', [CompanyController::class, 'store'])->name('company.store');
+    Route::put('/update/perusahaan', [CompanyController::class, 'update'])->name('company.update');
+    Route::get('/profile/perusahaan', [CompanyController::class, 'show'])->name('company.profile');
 
     // job vacancy
     Route::get('/job.html', [JobVacancyController::class, 'index'])->name('job.index')->middleware('role:company');
     Route::get('/create/job.html', [JobVacancyController::class, 'create'])->name('job.create')->middleware('role:company');
     Route::post('/create/job.html', [JobVacancyController::class, 'store'])->name('job.create.store')->middleware('role:company');
+    Route::get('/edit/{id}/job.html', [JobVacancyController::class, 'edit'])->name('job.edit')->middleware('role:company');
+    Route::put('/update/{id}/job.html', [JobVacancyController::class, 'update'])->name('job.update')->middleware('role:company');
+    Route::delete('/delete/{id}/job.html', [JobVacancyController::class, 'destroy'])->name('job.destroy')->middleware('role:company');
 });
 
 

@@ -8,6 +8,15 @@
                 <h2>Log in</h2>
                 <form action="{{ route('login') }}" method="post" class="login-form">
                     @csrf
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" name="email" required="">

@@ -5,8 +5,8 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="{{ route('home') }}"><img src="{{ asset('assets') }}/images/logo-2.png"
-                                        alt=""></a></figure>
+                            <figure class="logo"><a href="{{ route('home') }}"><img
+                                        src="{{ asset('assets') }}/images/logo-2.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area">
                             <!--Mobile Navigation Toggler-->
@@ -35,7 +35,7 @@
                                         <li><a href="">Featured Jobs</a></li>
                                         @auth
                                             @if (Auth::User()->user_type == 'company')
-                                                <li class="dropdown"><a href="">Upload Loker</a>
+                                                <li class="dropdown"><a href="#">Upload Loker</a>
                                                     <div class="megamenu">
                                                         <div class="row clearfix">
                                                             <div class="col-xl-6 column">
@@ -43,70 +43,72 @@
                                                                     <li>
                                                                         <h4>Post a Job</h4>
                                                                     </li>
-                                                                    <li><a href="{{ route('job.create') }}">Buat Loker</a></li>
-                                                                    <li><a href="{{ route('job.index') }}">Daftar lowongan</a></li>
-                                                                    <li><a href="feature-element-1.html">Data Pendaftar</a>
+                                                                    <li><a href="{{ route('job.create') }}">Buat Loker</a>
                                                                     </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-xl-6 column">
-                                                                <ul>
-                                                                    <li>
-                                                                        <h4>Manage company</h4>
-                                                                    </li>
-                                                                    <li><a href="testimonial-element.html">Profile
-                                                                            company</a>
-                                                                    </li>
-                                                                    <li><a href="">Account Settings</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                                    <li><a href="{{ route('job.index') }}">Daftar
+                                                                            lowongan</a></li>
                                                 </li>
-                                            @endif
-                                        @endauth
+                                        </ul>
+                                    </div>
+                                    <div class="col-xl-6 column">
+                                        <ul>
+                                            <li>
+                                                <h4>Manage company</h4>
+                                            </li>
+                                            <li><a href="{{ route('company.profile') }}">Profile
+                                                    company</a>
+                                            </li>
+                                            <li><a href="feature-element-1.html">Data Pendaftar</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                        </li>
+                        @endif
+                    @endauth
 
-                                        <li class="dropdown"><a href="">Aboute</a>
-                                            <div class="megamenu">
-                                                <div class="row clearfix">
-                                                    <div class="col-xl-6 column">
-                                                        <ul>
-                                                            <li>
-                                                                <h4>About</h4>
-                                                            </li>
-                                                            <li><a href="about-element.html">About us</a></li>
-                                                            <li><a href="category-element-1.html">contact</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-xl-6 column">
-                                                        <ul>
-                                                            <li>
-                                                                <h4>Syarat dan Ketentuan</h4>
-                                                            </li>
-                                                            <li><a href="feature-element-1.html">Kebijakan Privasi</a>
-                                                            </li>
-                                                            <li><a href="testimonial-element.html">Saluran Whatsapp</a>
-                                                            </li>
-                                                            <li><a href="testimonial-element.html">Group Whatsapp</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <li class="dropdown"><a href="#">Aboute</a>
+                        <div class="megamenu">
+                            <div class="row clearfix">
+                                <div class="col-xl-6 column">
+                                    <ul>
+                                        <li>
+                                            <h4>About</h4>
                                         </li>
-                                        <li><a href="">Blog</a>
+                                        <li><a href="about-element.html">About us</a></li>
+                                        <li><a href="category-element-1.html">contact</a>
                                         </li>
                                     </ul>
                                 </div>
-                            </nav>
+                                <div class="col-xl-6 column">
+                                    <ul>
+                                        <li>
+                                            <h4>Syarat dan Ketentuan</h4>
+                                        </li>
+                                        <li><a href="feature-element-1.html">Kebijakan Privasi</a>
+                                        </li>
+                                        <li><a href="testimonial-element.html">Saluran Whatsapp</a>
+                                        </li>
+                                        <li><a href="testimonial-element.html">Group Whatsapp</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
+                    </li>
+                    <li><a href="">Blog</a>
+                    </li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
 
-                        @guest
-                            @if (Route::has('login'))
-                                <div class="btn-box">
-                                    <a href="{{ route('login') }}" class="theme-btn-one">Masuk</a>
-                                    {{-- <button type="button" class="theme-btn-one" data-bs-toggle="modal"
+            @guest
+                @if (Route::has('login'))
+                    <div class="btn-box">
+                        <a href="{{ route('login') }}" class="theme-btn-one">Masuk</a>
+                        {{-- <button type="button" class="theme-btn-one" data-bs-toggle="modal"
                                         data-bs-target="#loginModal">
                                         Masuk
                                     </button>
@@ -114,11 +116,11 @@
                                         data-bs-target="#registerModal">
                                         Daftar
                                     </button> --}}
-                                </div>
-                            @endif
-                        @endguest
                     </div>
-                </div>
+                @endif
+            @endguest
+            </div>
+            </div>
             </div>
 
             <!--sticky Header-->
@@ -126,8 +128,8 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="{{ route('home') }}"><img src="{{ asset('assets') }}/images/logo.png"
-                                        alt=""></a></figure>
+                            <figure class="logo"><a href="{{ route('home') }}"><img
+                                        src="{{ asset('assets') }}/images/logo.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area">
                             <nav class="main-menu clearfix">
