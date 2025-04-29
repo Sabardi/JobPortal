@@ -516,7 +516,7 @@
                                         </div>
                                     </a>
                                 </div>
-                            @endforeach
+                            @endforeach()
                         </div>
                     </div>
                     <div class="tab" id="tab-2">
@@ -566,4 +566,204 @@
         </div>
     </section>
     <!-- feature-style-two end -->
+
+
+    <!-- chooseus-section -->
+    <section class="chooseus-section bg-color-1">
+        <div class="anim-icon">
+            <div class="icon anim-icon-1 rotate-me"
+                style="background-image: url({{ asset('assets') }}/images/icons/anim-icon-1.png);"></div>
+            <div class="icon anim-icon-2 rotate-me"
+                style="background-image: url({{ asset('assets') }}/images/icons/anim-icon-2.png);"></div>
+            <div class="icon anim-icon-3 rotate-me"
+                style="background-image: url({{ asset('assets') }}/images/icons/anim-icon-2.png);"></div>
+            <div class="icon anim-icon-4 rotate-me"
+                style="background-image: url({{ asset('assets') }}/images/icons/anim-icon-1.png);"></div>
+            <div class="icon anim-icon-5 rotate-me"
+                style="background-image: url({{ asset('assets') }}/images/icons/anim-icon-2.png);"></div>
+        </div>
+        <div class="pattern-layer">
+            <div class="pattern-1" style="background-image: url({{ asset('assets') }}/images/shape/shape-4.png);"></div>
+            <div class="pattern-2" style="background-image: url({{ asset('assets') }}/images/shape/shape-11.png);"></div>
+            <div class="pattern-3" style="background-image: url({{ asset('assets') }}/images/shape/shape-11.png);"></div>
+        </div>
+        <figure class="image-layer"><img src="{{ asset('assets') }}/images/resource/chooseus-1.png" alt="">
+        </figure>
+        <div class="auto-container">
+            <div class="clearfix row">
+                <div class="col-xl-6 col-lg-12 col-md-12 offset-xl-6 content-column">
+                    <div class="content_block_2">
+                        <div class="content-box">
+                            <div class="sec-title light">
+                                <span>Testimonials</span>
+                                <h2>Why Choose Classiera</h2>
+                            </div>
+                            <div class="inner-box">
+                                <div class="single-item">
+                                    <div class="icon-box"><i class="icon-26"></i></div>
+                                    <h3>Sell Your Product Safely</h3>
+                                    <p>Lorem ipsum dolor sit amet consectur adipisicing sed do eiusmod tempor.</p>
+                                </div>
+                                <div class="single-item">
+                                    <div class="icon-box"><i class="icon-27"></i></div>
+                                    <h3>Meet seller at a safe location</h3>
+                                    <p>Lorem ipsum dolor sit amet consectur adipisicing sed do eiusmod tempor.</p>
+                                </div>
+                                <div class="single-item">
+                                    <div class="icon-box"><i class="icon-28"></i></div>
+                                    <h3>Pay only after collecting item</h3>
+                                    <p>Lorem ipsum dolor sit amet consectur adipisicing sed do eiusmod tempor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- chooseus-section end -->
+
+    <!-- download-section -->
+    <section class="download-section">
+        <div class="pattern-layer" style="background-image: url({{ asset('assets') }}/images/shape/shape-8.png);"></div>
+        <div class="auto-container">
+            <div class="clearfix row align-items-center">
+                <div class="col-lg-6 col-md-6 col-sm-12 image-column">
+                    <div class="image-box">
+                        <figure class="image image-1"><img src="{{ asset('assets') }}/images/resource/laptop-1.png"
+                                alt="">
+                        </figure>
+                        <figure class="image image-2 rotate-me"><img
+                                src="{{ asset('assets') }}/images/resource/ball-1.png" alt=""></figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 content-column">
+                    <div class="content_block_1">
+                        <div class="content-box">
+                            <span class="upper-text">Download</span>
+                            <h2>Download Our Android and IOS App for Experience</h2>
+                            <div class="download-btn">
+                                <a href="" class="app-store">
+                                    <i class="icon-23"></i>
+                                    <span>Download on</span>
+                                    <h4>App Store</h4>
+                                </a>
+                                <a href="" class="play-store">
+                                    <i class="icon-24"></i>
+                                    <span>Get It On</span>
+                                    <h4>Google Play</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- download-section end -->
+
+
+    <!-- news-section -->
+    <section class="news-section sec-pad">
+        <div class="auto-container">
+            <div class="sec-title centred">
+                <span>News & Article</span>
+                <h2>Stay Update with Docpro</h2>
+            </div>
+            <div class="clearfix row">
+                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{{ asset('assets') }}/images/news/news-1.jpg" alt="">
+                                <a href="blog-details.html"><i class="fas fa-link"></i></a>
+                            </figure>
+                            <div class="lower-content">
+                                <figure class="admin-thumb"><img src="{{ asset('assets') }}/images/news/admin-1.png"
+                                        alt="">
+                                </figure>
+                                <span class="category">Electronics</span>
+                                <h3><a href="blog-details.html">Including animation in your design system</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectur adipisicing sed do eiusmod tempor incididunt
+                                    labore.</p>
+                                <span class="post-info">By <a href="blog-details.html">Eva Green</a> - October
+                                    13, 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div class="news-block-one wow fadeInDown animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{{ asset('assets') }}/images/news/news-2.jpg" alt="">
+                                <a href="blog-details.html"><i class="fas fa-link"></i></a>
+                            </figure>
+                            <div class="lower-content">
+                                <figure class="admin-thumb"><img src="{{ asset('assets') }}/images/news/admin-2.png"
+                                        alt="">
+                                </figure>
+                                <span class="category">Electronics</span>
+                                <h3><a href="blog-details.html">A digital prescription for the industry.</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectur adipisicing sed do eiusmod tempor incididunt
+                                    labore.</p>
+                                <span class="post-info">By <a href="blog-details.html">Eva Green</a> - October
+                                    13, 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{{ asset('assets') }}/images/news/news-3.jpg" alt="">
+                                <a href="blog-details.html"><i class="fas fa-link"></i></a>
+                            </figure>
+                            <div class="lower-content">
+                                <figure class="admin-thumb"><img src="{{ asset('assets') }}/images/news/admin-3.png"
+                                        alt="">
+                                </figure>
+                                <span class="category">Electronics</span>
+                                <h3><a href="blog-details.html">Strategic & commercial approach with issues.</a>
+                                </h3>
+                                <p>Lorem ipsum dolor sit amet consectur adipisicing sed do eiusmod tempor incididunt
+                                    labore.</p>
+                                <span class="post-info">By <a href="blog-details.html">Eva Green</a> - October
+                                    13, 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- news-section end -->
+
+
+    <!-- subscribe-section -->
+    <section class="subscribe-section">
+        <div class="pattern-layer" style="background-image: url({{ asset('assets') }}/images/shape/shape-9.png);">
+        </div>
+        <div class="auto-container">
+            <div class="clearfix row">
+                <div class="col-lg-6 col-md-6 col-sm-12 text-column">
+                    <div class="text">
+                        <div class="icon-box"><i class="icon-25"></i></div>
+                        <h2>Subscribe to Newsletter</h2>
+                        <p>and receive new ads in inbox</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 form-column">
+                    <form action="contact.html" method="post" class="subscribe-form">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Inout your email address" required="">
+                            <button type="submit" class="theme-btn-one">Subscribe Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subscribe-section end -->
 @endsection
