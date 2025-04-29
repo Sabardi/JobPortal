@@ -11,7 +11,7 @@
                     <p>Amet consectetur adipisicing elit sed do eiusmod.</p>
                 </div>
                 <div class="form-inner">
-                    <ul class="radio-select-box clearfix">
+                    <ul class="clearfix radio-select-box">
                         <li>
                             <div class="single-checkbox">
                                 <input type="radio" name="check-box" id="check1" checked="">
@@ -38,7 +38,7 @@
                         </li>
                     </ul>
                     <form action="" method="post">
-                        <div class="input-inner clearfix">
+                        <div class="clearfix input-inner">
                             <div class="form-group">
                                 <i class="icon-2"></i>
                                 <input type="search" name="name" placeholder="Cari Loker..." required="">
@@ -480,18 +480,18 @@
             </div>
             <div class="tabs-box">
                 <div class="tab-btn-box centred">
-                    <ul class="tab-btns tab-buttons clearfix">
+                    <ul class="clearfix tab-btns tab-buttons">
                         <li class="tab-btn active-btn" data-tab="#tab-1">Lowongan Terbaru</li>
                         <li class="tab-btn" data-tab="#tab-2">Datfar Perusahaan</li>
                     </ul>
                 </div>
                 <div class="tabs-content">
                     <div class="tab active-tab" id="tab-1">
-                        <div class="row clearfix">
+                        <div class="clearfix row">
                             @foreach ($jobs as $job)
                                 <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
                                     <a href="{{ route('job.show', $job) }}">
-                                        <div class="feature-block-one wow fadeInDown animated animated"
+                                        <div class="feature-block-one wow fadeInDown animated"
                                             data-wow-delay="00ms" data-wow-duration="1500ms">
                                             <div class="inner-box">
                                                 <div class="image-box">
@@ -507,7 +507,7 @@
                                                     </div>
                                                     <h4><a href="browse-ads-details.html">{{ $job->title }}</a></h4>
 
-                                                    <ul class="info clearfix">
+                                                    <ul class="clearfix info">
                                                         <li><i
                                                                 class="far fa-clock"></i>{{ $job->created_at->diffForHumans() }}
                                                         </li>
@@ -524,7 +524,7 @@
                         </div>
                     </div>
                     <div class="tab" id="tab-2">
-                        <div class="row clearfix">
+                        <div class="clearfix row">
                             @foreach ($companies as $company)
                                 <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
                                     <div class="feature-block-one">
@@ -546,7 +546,7 @@
                                                 </div>
                                                 <h4><a href="" class="text-sm">{{ $company->company_name }} </a>
                                                 </h4>
-                                                <ul class="info clearfix">
+                                                <ul class="clearfix info">
                                                     <li><i class="far fa-clock"></i>Bergabung
                                                         {{ $company->created_at->diffForHumans() }} </li>
                                                     <li><i class="fas fa-map-marker-alt"></i>{{ $company->address }}</li>
@@ -594,7 +594,7 @@
         <figure class="image-layer"><img src="{{ asset('assets') }}/images/resource/chooseus-1.png" alt="">
         </figure>
         <div class="auto-container">
-            <div class="row clearfix">
+            <div class="clearfix row">
                 <div class="col-xl-6 col-lg-12 col-md-12 offset-xl-6 content-column">
                     <div class="content_block_2">
                         <div class="content-box">
@@ -631,7 +631,7 @@
     <section class="download-section">
         <div class="pattern-layer" style="background-image: url({{ asset('assets') }}/images/shape/shape-8.png);"></div>
         <div class="auto-container">
-            <div class="row align-items-center clearfix">
+            <div class="clearfix row align-items-center">
                 <div class="col-lg-6 col-md-6 col-sm-12 image-column">
                     <div class="image-box">
                         <figure class="image image-1"><img src="{{ asset('assets') }}/images/resource/laptop-1.png"
@@ -674,9 +674,9 @@
                 <span>News & Article</span>
                 <h2>Stay Update with Docpro</h2>
             </div>
-            <div class="row clearfix">
+            <div class="clearfix row">
                 <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                    <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
                         data-wow-duration="1500ms">
                         <div class="inner-box">
                             <figure class="image-box">
@@ -698,7 +698,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                    <div class="news-block-one wow fadeInDown animated animated" data-wow-delay="00ms"
+                    <div class="news-block-one wow fadeInDown animated" data-wow-delay="00ms"
                         data-wow-duration="1500ms">
                         <div class="inner-box">
                             <figure class="image-box">
@@ -720,7 +720,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                    <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
                         data-wow-duration="1500ms">
                         <div class="inner-box">
                             <figure class="image-box">
@@ -753,7 +753,7 @@
         <div class="pattern-layer" style="background-image: url({{ asset('assets') }}/images/shape/shape-9.png);">
         </div>
         <div class="auto-container">
-            <div class="row clearfix">
+            <div class="clearfix row">
                 <div class="col-lg-6 col-md-6 col-sm-12 text-column">
                     <div class="text">
                         <div class="icon-box"><i class="icon-25"></i></div>

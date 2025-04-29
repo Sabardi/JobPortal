@@ -16,8 +16,8 @@
                                 <i class="icon-bar"></i>
                             </div>
                             <nav class="main-menu navbar-expand-md navbar-light">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
+                                <div class="clearfix collapse navbar-collapse show" id="navbarSupportedContent">
+                                    <ul class="clearfix navigation">
                                         <li class="current dropdown"><a href="#">Loker</a>
                                             <ul>
                                                 <li><a href="{{ route('loker') }}">Semua Loker</a></li>
@@ -37,7 +37,7 @@
                                             @if (Auth::User()->user_type == 'company')
                                                 <li class="dropdown"><a href="#">Upload Loker</a>
                                                     <div class="megamenu">
-                                                        <div class="row clearfix">
+                                                        <div class="clearfix row">
                                                             <div class="col-xl-6 column">
                                                                 <ul>
                                                                     <li>
@@ -70,7 +70,7 @@
 
                     <li class="dropdown"><a href="#">Aboute</a>
                         <div class="megamenu">
-                            <div class="row clearfix">
+                            <div class="clearfix row">
                                 <div class="col-xl-6 column">
                                     <ul>
                                         <li>
@@ -78,6 +78,8 @@
                                         </li>
                                         <li><a href="about-element.html">About us</a></li>
                                         <li><a href="category-element-1.html">contact</a>
+                                        </li>
+                                        <li><a href="">Check lamaran</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -132,7 +134,7 @@
                                         src="{{ asset('assets') }}/images/logo.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area">
-                            <nav class="main-menu clearfix">
+                            <nav class="clearfix main-menu">
                                 <!--Keep This Empty / Menu will come through Javascript-->
                             </nav>
                         </div>

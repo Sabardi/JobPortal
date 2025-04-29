@@ -22,7 +22,7 @@ class ApplicationController extends Controller
 
         // return $applications;
         // Return the view with job vacancies and applications
-        return view('application.index', compact( 'applications'));
+        return view('application.index', compact('applications'));
     }
 
     // form aplye
@@ -63,5 +63,14 @@ class ApplicationController extends Controller
     {
         $application = Application::findOrFail($id);
         return response()->json($application);
+    }
+
+
+    public function  confirm(Request $request, Application $jobVacancy)
+    {
+        // return $jobVacancy;
+        // $validatedData = $request->all();
+        $jobVacancy->update($request->all());
+        return redirect()->route('job.apply.index');
     }
 }

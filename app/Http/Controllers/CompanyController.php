@@ -24,7 +24,7 @@ class CompanyController extends Controller
     {
         $request->validate([
             'company_name' => 'required|string|max:255',
-            'description' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
             'company_website' => 'nullable|url',
             'industry_type' => 'nullable|string',
             'company_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',

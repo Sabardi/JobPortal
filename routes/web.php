@@ -37,13 +37,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit/{id}/job.html', [JobVacancyController::class, 'edit'])->name('job.edit')->middleware('role:company');
     Route::put('/update/{id}/job.html', [JobVacancyController::class, 'update'])->name('job.update')->middleware('role:company');
     Route::delete('/delete/{id}/job.html', [JobVacancyController::class, 'destroy'])->name('job.destroy')->middleware('role:company');
-    
+
     // application
     Route::get('/apply', [ApplicationController::class, 'index'])->name('job.apply.index')->middleware('role:company');
-    
+
     Route::get('/job/{jobVacancy}/apply', [ApplicationController::class, 'create'])->name('job.apply.create')->middleware('role:job_seeker');
     Route::post('/job/{jobVacancy}/apply', [ApplicationController::class, 'store'])->name('job.apply.store')->middleware('role:job_seeker');
-    Route::get('/job/{id}/apply/confirm', [ApplicationController::class, 'confirm'])->name('job.apply.confirm')->middleware('role:job_seeker');
+
+    // aply
+    Route::put('/job/{jobVacancy}/apply/confirm', [ApplicationController::class, 'confirm'])->name('job.apply.confirm')->middleware('role:company');
     Route::get('/job/{id}/apply/success', [ApplicationController::class, 'success'])->name('job.apply.success')->middleware('role:job_seeker');
 });
 
@@ -65,8 +67,15 @@ Route::post('job/{id}/deactivate', [AdminController::class, 'deactivateJob'])->m
 Route::get('/register/company', [RegisterController::class, 'createCompany'])->name('register.company');
 Route::post('/register/company', [RegisterController::class, 'registerCompany'])->name('register.company.post');
 
-// ember 
+// ember
 
 Route::get('/ember', function () {
     return view('application.embed');
 })->name('embed');
+
+
+// chek aplay lamaran
+
+Route::get('/search/aplay', function(){
+    return view('');
+});
