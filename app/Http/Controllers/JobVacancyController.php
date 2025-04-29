@@ -57,10 +57,10 @@ class JobVacancyController extends Controller
     }
 
     // Menampilkan lowongan pekerjaan berdasarkan ID
-    public function show($id)
+    public function show( $id)
     {
         $jobVacancy = Job_vacancy::findOrFail($id);
-        return response()->json($jobVacancy);
+        return view('job_vacancy.show', compact('jobVacancy'));
     }
 
     // Membuat lowongan pekerjaan baru

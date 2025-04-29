@@ -490,32 +490,35 @@
                         <div class="row clearfix">
                             @foreach ($jobs as $job)
                                 <div class="col-lg-3 col-md-6 col-sm-12 feature-block">
-                                    <div class="feature-block-one wow fadeInDown animated animated" data-wow-delay="00ms"
-                                        data-wow-duration="1500ms">
-                                        <div class="inner-box">
-                                            <div class="image-box">
-                                                <figure class="image"><img
-                                                        src="{{ asset('assets') }}/images/resource/feature-7.jpg"
-                                                        alt=""></figure>
-                                                <div class="shape"></div>
-                                                <div class="feature">Featured</div>
-                                            </div>
-                                            <div class="lower-content">
-                                                <div class="category"><i class="fas fa-tags"></i>
-                                                    <p>{{ $job->job_type }}</p>
+                                    <a href="{{ route('job.show', $job) }}">
+                                        <div class="feature-block-one wow fadeInDown animated animated"
+                                            data-wow-delay="00ms" data-wow-duration="1500ms">
+                                            <div class="inner-box">
+                                                <div class="image-box">
+                                                    <figure class="image"><img
+                                                            src="{{ asset('assets') }}/images/resource/feature-7.jpg"
+                                                            alt=""></figure>
+                                                    <div class="shape"></div>
+                                                    <div class="feature">Featured</div>
                                                 </div>
-                                                <h4><a href="browse-ads-details.html">{{ $job->title }}</a></h4>
+                                                <div class="lower-content">
+                                                    <div class="category"><i class="fas fa-tags"></i>
+                                                        <p>{{ $job->job_type }}</p>
+                                                    </div>
+                                                    <h4><a href="browse-ads-details.html">{{ $job->title }}</a></h4>
 
-                                                <ul class="info clearfix">
-                                                    <li><i
-                                                            class="far fa-clock"></i>{{ $job->created_at->diffForHumans() }}
-                                                    </li>
-                                                    <li><i class="fas fa-map-marker-alt"></i>{{ $job->location->name }}
-                                                    </li>
-                                                </ul>
+                                                    <ul class="info clearfix">
+                                                        <li><i
+                                                                class="far fa-clock"></i>{{ $job->created_at->diffForHumans() }}
+                                                        </li>
+                                                        <li><i
+                                                                class="fas fa-map-marker-alt"></i>{{ $job->location->name }}
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             @endforeach()
                         </div>
@@ -546,7 +549,7 @@
                                                 <ul class="info clearfix">
                                                     <li><i class="far fa-clock"></i>Bergabung
                                                         {{ $company->created_at->diffForHumans() }} </li>
-                                                    <li><i class="fas fa-map-marker-alt"></i>{{$company->address}}</li>
+                                                    <li><i class="fas fa-map-marker-alt"></i>{{ $company->address }}</li>
                                                 </ul>
                                                 {{-- <div class="lower-box">
                                                     <h5>$3,000.00</h5>

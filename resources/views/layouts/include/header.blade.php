@@ -58,7 +58,7 @@
                                             <li><a href="{{ route('company.profile') }}">Profile
                                                     company</a>
                                             </li>
-                                            <li><a href="feature-element-1.html">Data Pendaftar</a>
+                                            <li><a href="{{ route('job.apply.index') }}">Data Pendaftar</a>
                                             </li>
                                         </ul>
                                     </div>

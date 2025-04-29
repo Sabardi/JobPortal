@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     protected $fillable = [
-        'job_vacancy_id', 'job_seeker_id', 'cover_letter', 'cv_link', 'status',
+        'job_vacancy_id', 'user_id', 'cover_letter', 'cv_link', 'status',
     ];
 
     // Relasi ke tabel job_vacancies (lowongan pekerjaan yang dilamar)
@@ -20,5 +20,16 @@ class Application extends Model
     public function jobSeeker()
     {
         return $this->belongsTo(User::class, 'job_seeker_id');
+    }
+
+    // Relasi ke tabel companies (perusahaan yang memiliki lowongan pekerjaan)
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
