@@ -92,7 +92,7 @@ class HomeController extends Controller
     public function company()
     {
         $companies = Company::all();
-        return response()->json($companies);
+        return view('all-company', compact('companies'));
     }
 
     public function loker()
@@ -102,7 +102,7 @@ class HomeController extends Controller
             ->where('is_active', true)
             ->orderBy('created_at', 'desc')
             ->get();
-        return response()->json($jobs);
+        return view('all-loker', compact('jobs'));
     }
 
 

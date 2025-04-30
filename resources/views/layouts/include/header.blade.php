@@ -18,24 +18,24 @@
                             <nav class="main-menu navbar-expand-md navbar-light">
                                 <div class="clearfix collapse navbar-collapse show" id="navbarSupportedContent">
                                     <ul class="clearfix navigation">
-                                        <li class="current dropdown"><a href="#">Loker</a>
+                                        <li class="current dropdown"><a class="text-decoration-none" href="#">Loker</a>
                                             <ul>
-                                                <li><a href="{{ route('loker') }}">Semua Loker</a></li>
-                                                <li><a href="{{ route('company') }}">Daftar Perusahaan</a></li>
-                                                <li><a href="{{ route('category') }}">Kategori Loker</a></li>
+                                                <li><a class="text-decoration-none" href="{{ route('loker') }}">Semua Loker</a></li>
+                                                <li><a class="text-decoration-none" href="{{ route('company') }}">Daftar Perusahaan</a></li>
+                                                <li><a class="text-decoration-none" href="{{ route('category') }}">Kategori Loker</a></li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown"><a href="">Lokasi</a>
+                                        <li class="dropdown"><a class="text-decoration-none" href="#">Lokasi</a>
                                             <ul>
                                                 {{-- <li><a href="">Kota Mataram</a></li> --}}
                                                 <x-header />
                                             </ul>
                                         </li>
 
-                                        <li><a href="">Featured Jobs</a></li>
+                                        <li><a href="" class="text-decoration-none">Featured Jobs</a></li>
                                         @auth
                                             @if (Auth::User()->user_type == 'company')
-                                                <li class="dropdown"><a href="#">Upload Loker</a>
+                                                <li class="dropdown"><a class="text-decoration-none" href="#">Upload Loker</a>
                                                     <div class="megamenu">
                                                         <div class="clearfix row">
                                                             <div class="col-xl-6 column">
@@ -43,9 +43,9 @@
                                                                     <li>
                                                                         <h4>Post a Job</h4>
                                                                     </li>
-                                                                    <li><a href="{{ route('job.create') }}">Buat Loker</a>
+                                                                    <li><a href="{{ route('job.create') }}" class="text-decoration-none">Buat Loker</a>
                                                                     </li>
-                                                                    <li><a href="{{ route('job.index') }}">Daftar
+                                                                    <li><a href="{{ route('job.index') }}" class="text-decoration-none">Daftar
                                                                             lowongan</a></li>
                                                 </li>
                                         </ul>
@@ -55,10 +55,10 @@
                                             <li>
                                                 <h4>Manage company</h4>
                                             </li>
-                                            <li><a href="{{ route('company.profile') }}">Profile
+                                            <li><a href="{{ route('company.profile') }}" class="text-decoration-none">Profile
                                                     company</a>
                                             </li>
-                                            <li><a href="{{ route('job.apply.index') }}">Data Pendaftar</a>
+                                            <li><a href="{{ route('job.apply.index') }}" class="text-decoration-none">Data Pendaftar</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -68,7 +68,7 @@
                         @endif
                     @endauth
 
-                    <li class="dropdown"><a href="#">Aboute</a>
+                    <li class="dropdown"><a class="text-decoration-none" href="#">Aboute</a>
                         <div class="megamenu">
                             <div class="clearfix row">
                                 <div class="col-xl-6 column">
@@ -76,10 +76,10 @@
                                         <li>
                                             <h4>About</h4>
                                         </li>
-                                        <li><a href="about-element.html">About us</a></li>
-                                        <li><a href="category-element-1.html">contact</a>
+                                        <li><a class="text-decoration-none" href="about-element.html">About us</a></li>
+                                        <li><a class="text-decoration-none" href="category-element-1.html">contact</a>
                                         </li>
-                                        <li><a href="{{ route('search.apply') }}">Check lamaran</a>
+                                        <li><a class="text-decoration-none" href="{{ route('search.apply') }}">Check lamaran</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -88,28 +88,29 @@
                                         <li>
                                             <h4>Syarat dan Ketentuan</h4>
                                         </li>
-                                        <li><a href="feature-element-1.html">Kebijakan Privasi</a>
+                                        <li><a class="text-decoration-none" href="feature-element-1.html">Kebijakan Privasi</a>
                                         </li>
-                                        <li><a href="testimonial-element.html">Saluran Whatsapp</a>
+                                        <li><a class="text-decoration-none" href="testimonial-element.html">Saluran Whatsapp</a>
                                         </li>
-                                        <li><a href="testimonial-element.html">Group Whatsapp</a>
+                                        <li><a class="text-decoration-none" href="testimonial-element.html">Group Whatsapp</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li><a href="">Blog</a>
+                    <li><a class="text-decoration-none"  href="">Blog</a>
                     </li>
                     </ul>
                 </div>
                 </nav>
             </div>
 
+            {{-- text-decoration-none --}}
             @guest
                 @if (Route::has('login'))
                     <div class="btn-box">
-                        <a href="{{ route('login') }}" class="theme-btn-one">Masuk</a>
+                        <a href="{{ route('login') }}" class="theme-btn-one text-decoration-none">Masuk</a>
                         {{-- <button type="button" class="theme-btn-one" data-bs-toggle="modal"
                                         data-bs-target="#loginModal">
                                         Masuk
@@ -141,7 +142,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <div class="btn-box">
-                                    <a href="{{ route('login') }}" class="theme-btn-one">Masuk</a>
+                                    <a href="{{ route('login') }}" class="theme-btn-one text-decoration-none">Masuk</a>
 
                                     {{-- <button type="button" class="theme-btn-one" data-bs-toggle="modal"
                                         data-bs-target="#loginModal">

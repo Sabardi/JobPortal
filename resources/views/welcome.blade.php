@@ -502,7 +502,7 @@
                                                         <i class="fas fa-tags"></i>
                                                         <p>{{ $job->job_type }}</p>
                                                     </div>
-                                                    <h4><a href="{{ route('job.show', $job) }}">{{ $job->title }}</a>
+                                                    <h4><a class="text-decoration-none" href="{{ route('job.show', $job) }}">{{ $job->title }}</a>
                                                     </h4>
 
                                                     <ul class="clearfix info">
