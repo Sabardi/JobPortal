@@ -58,8 +58,12 @@ class HomeController extends Controller
 
     public function category()
     {
-        $categories = JobCategory::all();
-        return response()->json($categories);
+        $categories = JobCategory::withCount('jobVacancies')
+            ->orderBy('job_vacancies_count', 'desc')
+            ->get();
+        // return $categories;
+        // return response()->json($categories);
+        return view('all-category', compact('categories'));
     }
     public function search(Request $request, $location = null, $category = null, $job = null)
     {
