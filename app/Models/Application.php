@@ -32,4 +32,11 @@ class Application extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function scopeFilter($query, $params)
+    {
+        $query->when(@$params['search'], function ($query, $search) {
+            $query->where('activity', 'LIKE', "%{$search}%");
+        });
+    }
 }

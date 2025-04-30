@@ -79,7 +79,7 @@
                                         <li><a href="about-element.html">About us</a></li>
                                         <li><a href="category-element-1.html">contact</a>
                                         </li>
-                                        <li><a href="">Check lamaran</a>
+                                        <li><a href="{{ route('search.apply') }}">Check lamaran</a>
                                         </li>
                                     </ul>
                                 </div>

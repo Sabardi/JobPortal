@@ -1,19 +1,21 @@
         <!-- main-footer -->
         <footer class="main-footer">
-            <div class="footer-top" style="background-image: url({{ asset('assets') }}/images/background/footer-1.jpg);">
+            <div class="footer-top" {{-- style="background-image: url({{ asset('assets') }}/images/background/footer-1.jpg);" --}}>
                 <div class="auto-container">
                     <div class="widget-section">
-                        <div class="row clearfix">
+                        <div class="clearfix row">
                             <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                                 <div class="footer-widget logo-widget">
                                     <figure class="footer-logo"><a href="index.html"><img
                                                 src="{{ asset('assets') }}/images/footer-logo.png" alt=""></a>
                                     </figure>
                                     <div class="text">
-                                        <p>Lorem ipsum dolor amet consetetur adi pisicing elit sed eiusm tempor in
-                                            cididunt ut labore dolore magna aliqua enim ad minim venitam</p>
+                                        <p>kami menghubungkan Anda dengan perusahaan terkemuka yang mencari talenta
+                                            seperti Anda. Dengan platform yang mudah digunakan, Anda dapat dengan mudah
+                                            mencari, melamar, dan mendapatkan pekerjaan. Pekerjaan ideal Anda hanya
+                                            sejauh klik!</p>
                                     </div>
-                                    <ul class="social-links clearfix">
+                                    <ul class="clearfix social-links">
                                         <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
                                         <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
@@ -28,7 +30,7 @@
                                         <h3>Services</h3>
                                     </div>
                                     <div class="widget-content">
-                                        <ul class="links-list clearfix">
+                                        <ul class="clearfix links-list">
                                             <li><a href="index.html">About Us</a></li>
                                             <li><a href="index.html">Listing</a></li>
                                             <li><a href="index.html">How It Works</a></li>
@@ -72,7 +74,7 @@
                                         <h3>Contacts</h3>
                                     </div>
                                     <div class="widget-content">
-                                        <ul class="info-list clearfix">
+                                        <ul class="clearfix info-list">
                                             <li>
                                                 <i class="fas fa-map-marker-alt"></i>
                                                 Flat 20, Reynolds Neck, North Helenaville, FV77 8WS
@@ -95,11 +97,11 @@
             </div>
             <div class="footer-bottom">
                 <div class="auto-container">
-                    <div class="footer-inner clearfix">
+                    <div class="clearfix footer-inner">
                         <div class="copyright pull-left">
                             <p><a href="index.html">Clasifico</a> &copy; 2020 All Right Reserved</p>
                         </div>
-                        <ul class="footer-nav pull-right clearfix">
+                        <ul class="clearfix footer-nav pull-right">
                             <li><a href="index.html">Terms of Service</a></li>
                             <li><a href="index.html">Privacy Policy</a></li>
                         </ul>

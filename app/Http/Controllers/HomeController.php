@@ -104,4 +104,12 @@ class HomeController extends Controller
             ->get();
         return response()->json($jobs);
     }
+
+
+    public function searchApply(Request $request)
+    {
+
+
+        return view('welcome', compact('locations', 'categories', 'jobs'));
+    }
 }

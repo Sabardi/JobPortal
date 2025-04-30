@@ -3,3 +3,8 @@
     <input type="text" name="name" placeholder="search ">
     <button type="submit">cari</button>
 </form>
+
+
+{{-- @if()
+
+@endif --}}

@@ -77,5 +77,5 @@ Route::get('/ember', function () {
 // chek aplay lamaran
 
 Route::get('/search/aplay', function(){
-    return view('');
-});
+    return view('search-apply');
+})->name('search.apply');
