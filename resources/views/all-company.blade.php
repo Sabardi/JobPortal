@@ -18,8 +18,8 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <!-- Logo -->
-                                    <img src="https://lokerntb.com/wp-content/uploads/2025/04/Lowongan-Kerja-di_Al-Wildan-Islamic-School-20-Mataram-150x150.webp"
-                                        alt="company Image" class="img-fluid" style="width: 10%; height: 10%;">
+                                    <img src="{{ Storage::url($company->company_logo) }}" alt="company Image"
+                                        class="img-fluid rounded-circle" style="width: 50px; height: 50px;">
 
                                     <!-- Company Info -->
                                     <div class="flex-grow-1 ms-3">
@@ -35,7 +35,7 @@
                                     <!-- Salary Range / Lowongan -->
                                     <div class="ms-3 text-end">
                                         <h6 class="text-muted small">Lowongan</h6>
-                                        <span class="badge bg-primary">{{ $company->count() }}</span>
+                                        <span class="badge bg-primary">{{ $company->jobVacancies->count() }}</span>
                                     </div>
                                 </div>
                             </div>

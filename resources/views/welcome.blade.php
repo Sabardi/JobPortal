@@ -2,8 +2,7 @@
 
 @section('content')
     <!-- banner-section -->
-    <section class="banner-section style-two centred"
-        style="background-image: url({{ asset('assets') }}/images/banner.png);">
+    <section class="banner-section style-two centred" style="background-image: url({{ asset('assets') }}/images/banner.png);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="text">
@@ -83,30 +82,24 @@
         <div class="auto-container">
             <div class="sec-title">
                 <h2>Kategori Lowongan</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing sed do eiusmod tempor incididunt labore
-                    <br />dolore magna aliqua enim.
-                </p>
             </div>
-
-            <x-modal-component />
 
             <div class="five-item-carousel owl-carousel owl-theme dots-style-one owl-nav-none">
                 <div class="category-block-one">
                     <div class="inner-box">
-                        <div class="shape">
-                            <div class="shape-1"
-                                style="background-image: url({{ asset('assets') }}/images/shape/shape-1.png);">
+                        <a href="">
+{{-- <link href="{{ asset('assets') }}/css/font-awesome-all.css" rel="stylesheet"> --}}
+
+                            <div class="icon-box">
+                                <img src="{{ asset('assets') }}/building.png" alt="">
                             </div>
-                            <div class="shape-2"
-                                style="background-image: url({{ asset('assets') }}/images/shape/shape-2.png);">
-                            </div>
-                        </div>
-                        <div class="icon-box"><i class="icon-6"></i></div>
-                        <h5>Property</h5>
-                        <span>52</span>
+                            <h5>t</h5>
+                            <span>52</span>
+                        </a>
+
                     </div>
                 </div>
-                <div class="category-block-one">
+                {{-- <div class="category-block-one">
                     <div class="inner-box">
                         <div class="shape">
                             <div class="shape-1"
@@ -465,7 +458,7 @@
                         <h5>Automotive</h5>
                         <span>27</span>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -502,7 +495,8 @@
                                                         <i class="fas fa-tags"></i>
                                                         <p>{{ $job->job_type }}</p>
                                                     </div>
-                                                    <h4><a class="text-decoration-none" href="{{ route('job.show', $job) }}">{{ $job->title }}</a>
+                                                    <h4><a class="text-decoration-none"
+                                                            href="{{ route('job.show', $job) }}">{{ $job->title }}</a>
                                                     </h4>
 
                                                     <ul class="clearfix info">
@@ -510,8 +504,7 @@
                                                             <i
                                                                 class="far fa-clock"></i>{{ $job->created_at->diffForHumans() }}
                                                         </li>
-                                                        <li><i
-                                                                class="fas fa-map-marker-alt"></i>{{ $job->location->name }}
+                                                        <li><i class="fas fa-map-marker-alt"></i>{{ $job->location->name }}
                                                         </li>
                                                     </ul>
                                                 </div>
