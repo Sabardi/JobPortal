@@ -490,31 +490,30 @@
                         <div class="clearfix col">
                             @foreach ($jobs as $job)
                                 <div class="row-lg-12 row-md-12 row-sm-12 feature-block">
-                                    <a href="{{ route('job.show', $job) }}">
-                                        <div class="feature-block-one wow fadeInDown animated">
-                                            <div class="inner-box">
-                                                <div class="flex justify-between">
-                                                    <div class="lower-content">
-                                                        <div class="category">
-                                                            <i class="fas fa-tags"></i>
-                                                            <p>{{ $job->job_type }}</p>
-                                                        </div>
-                                                        <h4><a href="browse-ads-details.html">{{ $job->title }}</a>
-                                                        </h4>
-
-                                                        <ul class="clearfix info">
-                                                            <li><i
-                                                                    class="far fa-clock"></i>{{ $job->created_at->diffForHumans() }}
-                                                            </li>
-                                                            <li><i
-                                                                    class="fas fa-map-marker-alt"></i>{{ $job->location->name }}
-                                                            </li>
-                                                        </ul>
+                                    <div class="feature-block-one wow fadeInDown animated">
+                                        <div class="inner-box">
+                                            <div class="flex justify-between">
+                                                <div class="lower-content">
+                                                    <div class="category">
+                                                        <i class="fas fa-tags"></i>
+                                                        <p>{{ $job->job_type }}</p>
                                                     </div>
+                                                    <h4><a href="{{ route('job.show', $job) }}">{{ $job->title }}</a>
+                                                    </h4>
+
+                                                    <ul class="clearfix info">
+                                                        <li>
+                                                            <i
+                                                                class="far fa-clock"></i>{{ $job->created_at->diffForHumans() }}
+                                                        </li>
+                                                        <li><i
+                                                                class="fas fa-map-marker-alt"></i>{{ $job->location->name }}
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
