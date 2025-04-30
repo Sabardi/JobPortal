@@ -3,7 +3,7 @@
 @section('content')
     <!-- banner-section -->
     <section class="banner-section style-two centred"
-        style="background-image: url({{ asset('assets') }}/images/banner/image.png);">
+        style="background-image: url({{ asset('assets') }}/images/banner/banner-2.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="text">

@@ -6,7 +6,7 @@
                     <div class="outer-box">
                         <div class="logo-box">
                             <figure class="logo"><a href="{{ route('home') }}"><img
-                                        src="{{ asset('assets') }}/images/logo-2.png" alt=""></a></figure>
+                                        src="{{ asset('assets') }}/images/logo2.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area">
                             <!--Mobile Navigation Toggler-->
