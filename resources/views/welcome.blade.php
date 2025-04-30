@@ -3,12 +3,16 @@
 @section('content')
     <!-- banner-section -->
     <section class="banner-section style-two centred"
-        style="background-image: url({{ asset('assets') }}/images/banner/banner-2.jpg);">
+        style="background-image: url({{ asset('assets') }}/images/banner/image.png);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="text">
-                    <h1>Buy, Sell, Rent & Exchange <br />in one Click</h1>
-                    <p>Amet consectetur adipisicing elit sed do eiusmod.</p>
+                    <h1>Temukan Pekerjaan Impian Anda
+                        <br />Hari Ini
+                    </h1>
+                    <p>kami menghubungkan Anda dengan perusahaan terkemuka yang mencari talenta seperti Anda. Dengan
+                        platform yang mudah digunakan, Anda dapat dengan mudah mencari, melamar, dan mendapatkan pekerjaan.
+                        Pekerjaan ideal Anda hanya sejauh klik!</p>
                 </div>
                 <div class="form-inner">
                     <ul class="clearfix radio-select-box">
