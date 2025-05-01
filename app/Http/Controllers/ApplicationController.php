@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use App\Models\Job_vacancy;
+use App\Models\JobCategory;
+use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +14,9 @@ class ApplicationController extends Controller
 
     public function index()
     {
+
+        $locations = Location::all();
+        $categories = JobCategory::all();
 
         $jobVacancies = Job_vacancy::where('company_id', auth()->user()->company->id)->get();
 
@@ -22,7 +27,7 @@ class ApplicationController extends Controller
 
         // return $applications;
         // Return the view with job vacancies and applications
-        return view('application.index', compact('applications'));
+        return view('application.index', compact('applications', 'locations', 'categories'));
     }
 
     // form aplye

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\JobCategory;
+use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -14,9 +16,11 @@ class CompanyController extends Controller
     // Menampilkan data perusahaan yang terkait dengan user
     public function show()
     {
+        $locations = Location::all();
+        $categories = JobCategory::all();
         $company = auth()->user()->company;
 
-        return view('company.profile', compact('company'));
+        return view('company.profile', compact('company', 'locations', 'categories'));
     }
 
     // Membuat data perusahaan baru

@@ -58,12 +58,14 @@ class HomeController extends Controller
 
     public function category()
     {
+        $locations = Location::all();
+        // $categories = JobCategory::all();
         $categories = JobCategory::withCount('jobVacancies')
             ->orderBy('job_vacancies_count', 'desc')
             ->get();
         // return $categories;
         // return response()->json($categories);
-        return view('all-category', compact('categories'));
+        return view('all-category', compact('categories', 'locations'));
     }
     public function search(Request $request, $location = null, $category = null, $job = null)
     {
@@ -95,18 +97,22 @@ class HomeController extends Controller
 
     public function company()
     {
+        $locations = Location::all();
+        $categories = JobCategory::all();
         $companies = Company::all();
-        return view('all-company', compact('companies'));
+        return view('all-company', compact('companies', 'locations', 'categories'));
     }
 
     public function loker()
     {
+        $locations = Location::all();
+        $categories = JobCategory::all();
         $jobs = Job_vacancy::with('location')
             ->where('is_verified', true)
             ->where('is_active', true)
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('all-loker', compact('jobs'));
+        return view('all-loker', compact('jobs', 'locations', 'categories'));
     }
 
 

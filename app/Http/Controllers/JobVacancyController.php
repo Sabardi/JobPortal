@@ -16,6 +16,8 @@ class JobVacancyController extends Controller
     // Menampilkan semua lowongan pekerjaan
     public function index()
     {
+        $locations = Location::all();
+        $categories = JobCategory::all();
 
         if (!auth()->user()->company) {
             return redirect()->route('job.create');
@@ -26,7 +28,7 @@ class JobVacancyController extends Controller
             ->where('is_active', true)
             ->get();
 
-        return view('job_vacancy.index', compact('jobVacancies'));
+        return view('job_vacancy.index', compact('jobVacancies', 'locations', 'categories'));
     }
 
     public function create()

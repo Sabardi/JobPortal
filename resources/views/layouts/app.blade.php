@@ -27,6 +27,8 @@
         @include('layouts.include.mobileMenu')
         <x-modal-component />
         <x-modal-component-register />
+    @include('layouts.include.header-search')
+
         @yield('content')
 
         @include('layouts.include.footer')
@@ -35,7 +37,6 @@
             <span class="far fa-long-arrow-up"></span>
         </button>
     </div>
-
     @include('layouts.include.js')
 </body>
 

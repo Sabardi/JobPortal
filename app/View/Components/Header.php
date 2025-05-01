@@ -14,8 +14,8 @@ class Header extends Component
      * Create a new component instance.
      */
 
-     public $locations;
-     public $categories;
+    public $locations;
+    public $categories;
     public function __construct()
     {
         $this->locations = Location::all();
